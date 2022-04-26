@@ -6,7 +6,7 @@
 #
 Name     : pypi-pyxattr
 Version  : 0.7.2
-Release  : 27
+Release  : 28
 URL      : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz
 Source1  : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz.asc
@@ -17,9 +17,6 @@ Requires: pypi-pyxattr-license = %{version}-%{release}
 Requires: pypi-pyxattr-python = %{version}-%{release}
 Requires: pypi-pyxattr-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: pyxattr
-Provides: pyxattr-python
-Provides: pyxattr-python3
 
 %description
 implements extended attributes manipulation. It is a wrapper on top
@@ -61,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641486852
+export SOURCE_DATE_EPOCH=1651015398
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
