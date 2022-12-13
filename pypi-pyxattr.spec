@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xF66E3E419F84F4DE (iusty@k1024.org)
 #
 Name     : pypi-pyxattr
-Version  : 0.7.2
-Release  : 35
-URL      : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz
-Source1  : https://files.pythonhosted.org/packages/31/9a/5211b7345c70b0ae3d164a1d0004b9642baf26c5ddd6cc3af04cf2c45ee4/pyxattr-0.7.2.tar.gz.asc
+Version  : 0.8.0
+Release  : 36
+URL      : https://files.pythonhosted.org/packages/8f/27/f9072922b73e35bdea86ec684fa754271181dc8e95507c8becd4fbcbd191/pyxattr-0.8.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/8f/27/f9072922b73e35bdea86ec684fa754271181dc8e95507c8becd4fbcbd191/pyxattr-0.8.0.tar.gz
+Source1  : https://files.pythonhosted.org/packages/8f/27/f9072922b73e35bdea86ec684fa754271181dc8e95507c8becd4fbcbd191/pyxattr-0.8.0.tar.gz.asc
 Summary  : Filesystem extended attributes for python
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -21,8 +21,10 @@ Requires: pypi-pyxattr-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-implements extended attributes manipulation. It is a wrapper on top
-        of the attr C library - see attr(5).
+# pyxattr
+This is the pyxattr module, a Python extension module which gives access
+to the extended attributes for filesystem objects available in some
+operating systems.
 
 %package filemap
 Summary: filemap components for the pypi-pyxattr package.
@@ -71,10 +73,10 @@ python3 components for the pypi-pyxattr package.
 
 
 %prep
-%setup -q -n pyxattr-0.7.2
-cd %{_builddir}/pyxattr-0.7.2
+%setup -q -n pyxattr-0.8.0
+cd %{_builddir}/pyxattr-0.8.0
 pushd ..
-cp -a pyxattr-0.7.2 buildavx2
+cp -a pyxattr-0.8.0 buildavx2
 popd
 
 %build
@@ -82,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656403311
+export SOURCE_DATE_EPOCH=1670891993
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -104,7 +106,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pyxattr
-cp %{_builddir}/pyxattr-0.7.2/COPYING %{buildroot}/usr/share/package-licenses/pypi-pyxattr/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/pyxattr-%{version}/COPYING %{buildroot}/usr/share/package-licenses/pypi-pyxattr/9a1929f4700d2407c70b507b3b2aaf6226a9543c || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
