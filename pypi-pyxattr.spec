@@ -6,7 +6,7 @@
 #
 Name     : pypi-pyxattr
 Version  : 0.8.0
-Release  : 36
+Release  : 37
 URL      : https://files.pythonhosted.org/packages/8f/27/f9072922b73e35bdea86ec684fa754271181dc8e95507c8becd4fbcbd191/pyxattr-0.8.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/8f/27/f9072922b73e35bdea86ec684fa754271181dc8e95507c8becd4fbcbd191/pyxattr-0.8.0.tar.gz
 Source1  : https://files.pythonhosted.org/packages/8f/27/f9072922b73e35bdea86ec684fa754271181dc8e95507c8becd4fbcbd191/pyxattr-0.8.0.tar.gz.asc
