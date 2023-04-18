@@ -1,5 +1,5 @@
 PKG_NAME := pypi-pyxattr
-URL = https://files.pythonhosted.org/packages/8f/27/f9072922b73e35bdea86ec684fa754271181dc8e95507c8becd4fbcbd191/pyxattr-0.8.0.tar.gz
+URL = https://files.pythonhosted.org/packages/97/d1/7b85f2712168dfa26df6471082403013f3f815f3239aee3def17b6fd69ee/pyxattr-0.8.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
