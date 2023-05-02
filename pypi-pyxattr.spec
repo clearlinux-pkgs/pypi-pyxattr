@@ -7,15 +7,13 @@
 #
 Name     : pypi-pyxattr
 Version  : 0.8.1
-Release  : 38
+Release  : 39
 URL      : https://files.pythonhosted.org/packages/97/d1/7b85f2712168dfa26df6471082403013f3f815f3239aee3def17b6fd69ee/pyxattr-0.8.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/97/d1/7b85f2712168dfa26df6471082403013f3f815f3239aee3def17b6fd69ee/pyxattr-0.8.1.tar.gz
 Source1  : https://files.pythonhosted.org/packages/97/d1/7b85f2712168dfa26df6471082403013f3f815f3239aee3def17b6fd69ee/pyxattr-0.8.1.tar.gz.asc
 Summary  : Filesystem extended attributes for python
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: pypi-pyxattr-filemap = %{version}-%{release}
-Requires: pypi-pyxattr-lib = %{version}-%{release}
 Requires: pypi-pyxattr-license = %{version}-%{release}
 Requires: pypi-pyxattr-python = %{version}-%{release}
 Requires: pypi-pyxattr-python3 = %{version}-%{release}
@@ -29,24 +27,6 @@ BuildRequires : buildreq-distutils3
 This is the pyxattr module, a Python extension module which gives access
 to the extended attributes for filesystem objects available in some
 operating systems.
-
-%package filemap
-Summary: filemap components for the pypi-pyxattr package.
-Group: Default
-
-%description filemap
-filemap components for the pypi-pyxattr package.
-
-
-%package lib
-Summary: lib components for the pypi-pyxattr package.
-Group: Libraries
-Requires: pypi-pyxattr-license = %{version}-%{release}
-Requires: pypi-pyxattr-filemap = %{version}-%{release}
-
-%description lib
-lib components for the pypi-pyxattr package.
-
 
 %package license
 Summary: license components for the pypi-pyxattr package.
@@ -68,7 +48,6 @@ python components for the pypi-pyxattr package.
 %package python3
 Summary: python3 components for the pypi-pyxattr package.
 Group: Default
-Requires: pypi-pyxattr-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(pyxattr)
 
@@ -88,12 +67,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681776965
+export SOURCE_DATE_EPOCH=1683047204
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -128,14 +107,6 @@ popd
 %files
 %defattr(-,root,root,-)
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-pypi-pyxattr
-
-%files lib
-%defattr(-,root,root,-)
-/usr/share/clear/optimized-elf/other*
-
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/pypi-pyxattr/9a1929f4700d2407c70b507b3b2aaf6226a9543c
@@ -145,4 +116,5 @@ popd
 
 %files python3
 %defattr(-,root,root,-)
+/V3/usr/lib/python3*/*
 /usr/lib/python3*/*
